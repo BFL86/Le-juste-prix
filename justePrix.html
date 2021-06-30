@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="saisi">
+    <button onclick="verifier()">Test</button>
+    <div id="infos"></div>
+    <script>
+        let resultat=getRandomInt(100000)
+        console.log(resultat)
+        console.log(getRandomInt(100000))
+        function verifier() {
+            let prop=document.getElementById("saisi").value;
+            if (prop==resultat) {
+                document.getElementById("infos").innerHTML="gagné";
+            }else if (prop > resultat) {
+                document.getElementById("infos").innerHTML="moins";
+            }else if (prop < resultat) {
+                document.getElementById("infos").innerHTML="plus";
+            }
+        }
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * max) + 1;
+        }
+    </script>
+</body>
+</html>
